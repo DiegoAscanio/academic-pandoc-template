@@ -1,0 +1,16 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: article.md
+
+format:
+  html: default
+  docx: default
+  pdf:
+    output-file: article-tex.pdf
+  typst:
+    output-file: article-typst.pdf
+
+execute:
+  freeze: true

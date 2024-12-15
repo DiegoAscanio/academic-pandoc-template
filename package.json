@@ -9,11 +9,11 @@
 		"changelog": "git-cliff --config .git-cliff.toml"
 	},
 	"devDependencies": {
-		"commitizen": "^4.3.0",
+		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"git-cliff": "^1.4.0",
 		"husky": "^8.0.3",
-		"prettier": "^3.0.3"
+		"prettier": "^3.4.2"
 	},
 	"type": "module",
 	"config": {

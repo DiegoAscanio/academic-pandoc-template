@@ -3005,8 +3005,8 @@
 				'object' == typeof exports && 'undefined' != typeof module
 					? (module.exports = t())
 					: 'function' == typeof define && define.amd
-					? define(t)
-					: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).Reveal = t());
+						? define(t)
+						: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).Reveal = t());
 			})(this, function () {
 				'use strict';
 				const e = (e, t) => {
@@ -3135,7 +3135,7 @@
 															})
 														);
 													}));
-										  }
+											}
 										: function () {},
 								d = function (e) {
 									return function () {
@@ -3491,10 +3491,10 @@
 										? t.contentWindow.postMessage(
 												'{"event":"command","func":"playVideo","args":""}',
 												'*'
-										  )
+											)
 										: /player\.vimeo\.com\//.test(t.getAttribute('src')) && e
-										? t.contentWindow.postMessage('{"method":"play"}', '*')
-										: t.contentWindow.postMessage('slide:start', '*');
+											? t.contentWindow.postMessage('{"method":"play"}', '*')
+											: t.contentWindow.postMessage('slide:start', '*');
 							}
 						}
 					}
@@ -3636,8 +3636,8 @@
 										this.indicesOnShow.h,
 										this.indicesOnShow.v,
 										this.indicesOnShow.f
-								  ),
-								  !1)
+									),
+									!1)
 						);
 					}
 					jumpAfter(e) {
@@ -3705,7 +3705,7 @@
 								g: parseInt(s[2], 10),
 								b: parseInt(s[3], 10),
 								a: parseFloat(s[4])
-						  }
+							}
 						: null;
 				};
 				class R {
@@ -3729,17 +3729,17 @@
 							this.Reveal.getConfig().parallaxBackgroundImage
 								? ((this.element.style.backgroundImage =
 										'url("' + this.Reveal.getConfig().parallaxBackgroundImage + '")'),
-								  (this.element.style.backgroundSize =
+									(this.element.style.backgroundSize =
 										this.Reveal.getConfig().parallaxBackgroundSize),
-								  (this.element.style.backgroundRepeat =
+									(this.element.style.backgroundRepeat =
 										this.Reveal.getConfig().parallaxBackgroundRepeat),
-								  (this.element.style.backgroundPosition =
+									(this.element.style.backgroundPosition =
 										this.Reveal.getConfig().parallaxBackgroundPosition),
-								  setTimeout(() => {
+									setTimeout(() => {
 										this.Reveal.getRevealElement().classList.add('has-parallax-background');
-								  }, 1))
+									}, 1))
 								: ((this.element.style.backgroundImage = ''),
-								  this.Reveal.getRevealElement().classList.remove('has-parallax-background'));
+									this.Reveal.getRevealElement().classList.remove('has-parallax-background'));
 					}
 					createBackground(e, t) {
 						let i = document.createElement('div');
@@ -3848,16 +3848,16 @@
 									r < n.h
 										? i.classList.add(a)
 										: r > n.h
-										? i.classList.add(o)
-										: (i.classList.add('present'), (s = i)),
+											? i.classList.add(o)
+											: (i.classList.add('present'), (s = i)),
 									(e || r === n.h) &&
 										t(i, '.slide-background').forEach((e, t) => {
 											e.classList.remove('past', 'present', 'future'),
 												t < n.v
 													? e.classList.add('past')
 													: t > n.v
-													? e.classList.add('future')
-													: (e.classList.add('present'), r === n.h && (s = e));
+														? e.classList.add('future')
+														: (e.classList.add('present'), r === n.h && (s = e));
 										});
 							}),
 							this.previousBackground &&
@@ -3914,8 +3914,8 @@
 								'number' == typeof this.Reveal.getConfig().parallaxBackgroundHorizontal
 									? this.Reveal.getConfig().parallaxBackgroundHorizontal
 									: d > 1
-									? (t - l) / (d - 1)
-									: 0),
+										? (t - l) / (d - 1)
+										: 0),
 								(r = o * e.h * -1);
 							let c,
 								h,
@@ -4058,7 +4058,7 @@
 							t === i
 								? delete r.styles[e]
 								: (!0 === t.explicitValue && (r.styles[e] = t.value),
-								  !0 === i.explicitValue && (o.styles[e] = i.value));
+									!0 === i.explicitValue && (o.styles[e] = i.value));
 						}
 						let l = '',
 							d = Object.keys(r.styles);
@@ -4128,10 +4128,10 @@
 									void 0 !== t.from && 'from' === e
 										? (i = { value: t.from, explicitValue: !0 })
 										: void 0 !== t.to && 'to' === e
-										? (i = { value: t.to, explicitValue: !0 })
-										: ('line-height' === t.property &&
-												(i = parseFloat(a['line-height']) / parseFloat(a['font-size'])),
-										  isNaN(i) && (i = a[t.property])),
+											? (i = { value: t.to, explicitValue: !0 })
+											: ('line-height' === t.property &&
+													(i = parseFloat(a['line-height']) / parseFloat(a['font-size'])),
+												isNaN(i) && (i = a[t.property])),
 									'' !== i && (s.styles[t.property] = i);
 							}),
 							s
@@ -4172,23 +4172,23 @@
 								a(e.from, n)
 									? (e.options = { scale: !1 })
 									: a(e.from, 'pre') &&
-									  ((e.options = { scale: !1, styles: ['width', 'height'] }),
-									  this.findAutoAnimateMatches(
+										((e.options = { scale: !1, styles: ['width', 'height'] }),
+										this.findAutoAnimateMatches(
 											i,
 											e.from,
 											e.to,
 											'.hljs .hljs-ln-code',
 											(e) => e.textContent,
 											{ scale: !1, styles: [], measure: this.getLocalBoundingBox.bind(this) }
-									  ),
-									  this.findAutoAnimateMatches(
+										),
+										this.findAutoAnimateMatches(
 											i,
 											e.from,
 											e.to,
 											'.hljs .hljs-ln-numbers[data-line-number]',
 											(e) => e.getAttribute('data-line-number'),
 											{ scale: !1, styles: ['width'], measure: this.getLocalBoundingBox.bind(this) }
-									  ));
+										));
 							}, this),
 							i
 						);
@@ -4473,8 +4473,8 @@
 								? this.activate()
 								: this.deactivate()
 							: this.isActive()
-							? this.deactivate()
-							: this.activate();
+								? this.deactivate()
+								: this.activate();
 					}
 					isActive() {
 						return this.active;
@@ -4507,13 +4507,13 @@
 					configure(e, t) {
 						'linear' === e.navigationMode
 							? ((this.shortcuts['&#8594;  ,  &#8595;  ,  SPACE  ,  N  ,  L  ,  J'] = 'Next slide'),
-							  (this.shortcuts['&#8592;  ,  &#8593;  ,  P  ,  H  ,  K'] = 'Previous slide'))
+								(this.shortcuts['&#8592;  ,  &#8593;  ,  P  ,  H  ,  K'] = 'Previous slide'))
 							: ((this.shortcuts['N  ,  SPACE'] = 'Next slide'),
-							  (this.shortcuts['P  ,  Shift SPACE'] = 'Previous slide'),
-							  (this.shortcuts['&#8592;  ,  H'] = 'Navigate left'),
-							  (this.shortcuts['&#8594;  ,  L'] = 'Navigate right'),
-							  (this.shortcuts['&#8593;  ,  K'] = 'Navigate up'),
-							  (this.shortcuts['&#8595;  ,  J'] = 'Navigate down')),
+								(this.shortcuts['P  ,  Shift SPACE'] = 'Previous slide'),
+								(this.shortcuts['&#8592;  ,  H'] = 'Navigate left'),
+								(this.shortcuts['&#8594;  ,  L'] = 'Navigate right'),
+								(this.shortcuts['&#8593;  ,  K'] = 'Navigate up'),
+								(this.shortcuts['&#8595;  ,  J'] = 'Navigate down')),
 							(this.shortcuts['Alt + &#8592;/&#8593/&#8594;/&#8595;'] =
 								'Navigate without fragments'),
 							(this.shortcuts['Shift + &#8592;/&#8593/&#8594;/&#8595;'] =
@@ -4595,8 +4595,8 @@
 									'function' == typeof i
 										? i.apply(null, [e])
 										: 'string' == typeof i &&
-										  'function' == typeof this.Reveal[i] &&
-										  this.Reveal[i].call(),
+											'function' == typeof this.Reveal[i] &&
+											this.Reveal[i].call(),
 										(h = !0);
 								}
 						if (!1 === h)
@@ -4606,8 +4606,8 @@
 									'function' == typeof t
 										? t.apply(null, [e])
 										: 'string' == typeof t &&
-										  'function' == typeof this.Reveal[t] &&
-										  this.Reveal[t].call(),
+											'function' == typeof this.Reveal[t] &&
+											this.Reveal[t].call(),
 										(h = !0);
 								}
 						!1 === h &&
@@ -4615,62 +4615,72 @@
 							80 === i || 33 === i
 								? this.Reveal.prev({ skipFragments: e.altKey })
 								: 78 === i || 34 === i
-								? this.Reveal.next({ skipFragments: e.altKey })
-								: 72 === i || 37 === i
-								? e.shiftKey
-									? this.Reveal.slide(0)
-									: !this.Reveal.overview.isActive() && c
-									? this.Reveal.prev({ skipFragments: e.altKey })
-									: this.Reveal.left({ skipFragments: e.altKey })
-								: 76 === i || 39 === i
-								? e.shiftKey
-									? this.Reveal.slide(this.Reveal.getHorizontalSlides().length - 1)
-									: !this.Reveal.overview.isActive() && c
 									? this.Reveal.next({ skipFragments: e.altKey })
-									: this.Reveal.right({ skipFragments: e.altKey })
-								: 75 === i || 38 === i
-								? e.shiftKey
-									? this.Reveal.slide(void 0, 0)
-									: !this.Reveal.overview.isActive() && c
-									? this.Reveal.prev({ skipFragments: e.altKey })
-									: this.Reveal.up({ skipFragments: e.altKey })
-								: 74 === i || 40 === i
-								? e.shiftKey
-									? this.Reveal.slide(void 0, Number.MAX_VALUE)
-									: !this.Reveal.overview.isActive() && c
-									? this.Reveal.next({ skipFragments: e.altKey })
-									: this.Reveal.down({ skipFragments: e.altKey })
-								: 36 === i
-								? this.Reveal.slide(0)
-								: 35 === i
-								? this.Reveal.slide(this.Reveal.getHorizontalSlides().length - 1)
-								: 32 === i
-								? (this.Reveal.overview.isActive() && this.Reveal.overview.deactivate(),
-								  e.shiftKey
-										? this.Reveal.prev({ skipFragments: e.altKey })
-										: this.Reveal.next({ skipFragments: e.altKey }))
-								: 58 === i || 59 === i || 66 === i || 86 === i || 190 === i || 191 === i
-								? this.Reveal.togglePause()
-								: 70 === i
-								? ((e) => {
-										let t =
-											(e = e || document.documentElement).requestFullscreen ||
-											e.webkitRequestFullscreen ||
-											e.webkitRequestFullScreen ||
-											e.mozRequestFullScreen ||
-											e.msRequestFullscreen;
-										t && t.apply(e);
-								  })(t.embedded ? this.Reveal.getViewportElement() : document.documentElement)
-								: 65 === i
-								? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(n)
-								: 71 === i
-								? t.jumpToSlide && this.Reveal.toggleJumpToSlide()
-								: (h = !1)),
+									: 72 === i || 37 === i
+										? e.shiftKey
+											? this.Reveal.slide(0)
+											: !this.Reveal.overview.isActive() && c
+												? this.Reveal.prev({ skipFragments: e.altKey })
+												: this.Reveal.left({ skipFragments: e.altKey })
+										: 76 === i || 39 === i
+											? e.shiftKey
+												? this.Reveal.slide(this.Reveal.getHorizontalSlides().length - 1)
+												: !this.Reveal.overview.isActive() && c
+													? this.Reveal.next({ skipFragments: e.altKey })
+													: this.Reveal.right({ skipFragments: e.altKey })
+											: 75 === i || 38 === i
+												? e.shiftKey
+													? this.Reveal.slide(void 0, 0)
+													: !this.Reveal.overview.isActive() && c
+														? this.Reveal.prev({ skipFragments: e.altKey })
+														: this.Reveal.up({ skipFragments: e.altKey })
+												: 74 === i || 40 === i
+													? e.shiftKey
+														? this.Reveal.slide(void 0, Number.MAX_VALUE)
+														: !this.Reveal.overview.isActive() && c
+															? this.Reveal.next({ skipFragments: e.altKey })
+															: this.Reveal.down({ skipFragments: e.altKey })
+													: 36 === i
+														? this.Reveal.slide(0)
+														: 35 === i
+															? this.Reveal.slide(this.Reveal.getHorizontalSlides().length - 1)
+															: 32 === i
+																? (this.Reveal.overview.isActive() &&
+																		this.Reveal.overview.deactivate(),
+																	e.shiftKey
+																		? this.Reveal.prev({ skipFragments: e.altKey })
+																		: this.Reveal.next({ skipFragments: e.altKey }))
+																: 58 === i ||
+																	  59 === i ||
+																	  66 === i ||
+																	  86 === i ||
+																	  190 === i ||
+																	  191 === i
+																	? this.Reveal.togglePause()
+																	: 70 === i
+																		? ((e) => {
+																				let t =
+																					(e = e || document.documentElement).requestFullscreen ||
+																					e.webkitRequestFullscreen ||
+																					e.webkitRequestFullScreen ||
+																					e.mozRequestFullScreen ||
+																					e.msRequestFullscreen;
+																				t && t.apply(e);
+																			})(
+																				t.embedded
+																					? this.Reveal.getViewportElement()
+																					: document.documentElement
+																			)
+																		: 65 === i
+																			? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(n)
+																			: 71 === i
+																				? t.jumpToSlide && this.Reveal.toggleJumpToSlide()
+																				: (h = !1)),
 							h
 								? e.preventDefault && e.preventDefault()
 								: (27 !== i && 79 !== i) ||
-								  (!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(),
-								  e.preventDefault && e.preventDefault()),
+									(!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(),
+									e.preventDefault && e.preventDefault()),
 							this.Reveal.cueAutoSlide();
 					}
 				}
@@ -4684,7 +4694,7 @@
 										enumerable: !0,
 										configurable: !0,
 										writable: !0
-								  })
+									})
 								: (t[i] = n),
 							(this.Reveal = e),
 							(this.writeURLTimeout = 0),
@@ -4743,7 +4753,7 @@
 							t.history
 								? (window.location.hash = e)
 								: t.hash &&
-								  ('/' === e
+									('/' === e
 										? this.debouncedReplaceState(window.location.pathname + window.location.search)
 										: this.debouncedReplaceState('#' + e));
 						}
@@ -4758,7 +4768,7 @@
 								: (this.replaceStateTimeout = setTimeout(
 										() => this.replaceState(e),
 										this.MAX_REPLACE_STATE_FREQUENCY
-								  ));
+									));
 					}
 					getHash(e) {
 						let t = '/',
@@ -4917,7 +4927,7 @@
 											this.controlsUp.forEach((e) => {
 												e.classList.add('fragmented', 'enabled'), e.removeAttribute('disabled');
 											}),
-									  e.next &&
+										e.next &&
 											this.controlsDown.forEach((e) => {
 												e.classList.add('fragmented', 'enabled'), e.removeAttribute('disabled');
 											}))
@@ -4925,7 +4935,7 @@
 											this.controlsLeft.forEach((e) => {
 												e.classList.add('fragmented', 'enabled'), e.removeAttribute('disabled');
 											}),
-									  e.next &&
+										e.next &&
 											this.controlsRight.forEach((e) => {
 												e.classList.add('fragmented', 'enabled'), e.removeAttribute('disabled');
 											}));
@@ -4935,13 +4945,13 @@
 							!this.Reveal.hasNavigatedVertically() && e.down
 								? this.controlsDownArrow.classList.add('highlight')
 								: (this.controlsDownArrow.classList.remove('highlight'),
-								  this.Reveal.getConfig().rtl
+									this.Reveal.getConfig().rtl
 										? !this.Reveal.hasNavigatedHorizontally() && e.left && 0 === t.v
 											? this.controlsLeftArrow.classList.add('highlight')
 											: this.controlsLeftArrow.classList.remove('highlight')
 										: !this.Reveal.hasNavigatedHorizontally() && e.right && 0 === t.v
-										? this.controlsRightArrow.classList.add('highlight')
-										: this.controlsRightArrow.classList.remove('highlight'));
+											? this.controlsRightArrow.classList.add('highlight')
+											: this.controlsRightArrow.classList.remove('highlight'));
 						}
 					}
 					destroy() {
@@ -5033,15 +5043,15 @@
 					configure(e, t) {
 						e.mouseWheel
 							? (document.addEventListener('DOMMouseScroll', this.onDocumentMouseScroll, !1),
-							  document.addEventListener('mousewheel', this.onDocumentMouseScroll, !1))
+								document.addEventListener('mousewheel', this.onDocumentMouseScroll, !1))
 							: (document.removeEventListener('DOMMouseScroll', this.onDocumentMouseScroll, !1),
-							  document.removeEventListener('mousewheel', this.onDocumentMouseScroll, !1)),
+								document.removeEventListener('mousewheel', this.onDocumentMouseScroll, !1)),
 							e.hideInactiveCursor
 								? (document.addEventListener('mousemove', this.onDocumentCursorActive, !1),
-								  document.addEventListener('mousedown', this.onDocumentCursorActive, !1))
+									document.addEventListener('mousedown', this.onDocumentCursorActive, !1))
 								: (this.showCursor(),
-								  document.removeEventListener('mousemove', this.onDocumentCursorActive, !1),
-								  document.removeEventListener('mousedown', this.onDocumentCursorActive, !1));
+									document.removeEventListener('mousemove', this.onDocumentCursorActive, !1),
+									document.removeEventListener('mousedown', this.onDocumentCursorActive, !1));
 					}
 					showCursor() {
 						this.cursorHidden &&
@@ -5123,8 +5133,8 @@
 										'string' == typeof e.id
 											? (this.registerPlugin(e), t(e))
 											: 'string' == typeof e.src
-											? H(e.src, () => t(e))
-											: (console.warn('Unrecognized plugin format', e), t());
+												? H(e.src, () => t(e))
+												: (console.warn('Unrecognized plugin format', e), t());
 									});
 								} else this.initPlugins().then(e);
 							})
@@ -5170,9 +5180,9 @@
 						'string' != typeof t
 							? console.warn("Unrecognized plugin format; can't find plugin.id", e)
 							: void 0 === this.registeredPlugins[t]
-							? ((this.registeredPlugins[t] = e),
-							  'loaded' === this.state && 'function' == typeof e.init && e.init(this.Reveal))
-							: console.warn('reveal.js: "' + t + '" plugin has already been registered');
+								? ((this.registeredPlugins[t] = e),
+									'loaded' === this.state && 'function' == typeof e.init && e.init(this.Reveal))
+								: console.warn('reveal.js: "' + t + '" plugin has already been registered');
 					}
 					hasPlugin(e) {
 						return !!this.registeredPlugins[e];
@@ -5264,9 +5274,9 @@
 											'separate-page' === n
 												? g.push(s)
 												: ((s.style.left = i + 'px'),
-												  (s.style.bottom = i + 'px'),
-												  (s.style.width = a - 2 * i + 'px'),
-												  f.appendChild(s));
+													(s.style.bottom = i + 'px'),
+													(s.style.width = a - 2 * i + 'px'),
+													f.appendChild(s));
 									}
 								}
 								if (n) {
@@ -5332,15 +5342,15 @@
 						let e = this.Reveal.getRevealElement();
 						'onpointerdown' in window
 							? (e.addEventListener('pointerdown', this.onPointerDown, !1),
-							  e.addEventListener('pointermove', this.onPointerMove, !1),
-							  e.addEventListener('pointerup', this.onPointerUp, !1))
+								e.addEventListener('pointermove', this.onPointerMove, !1),
+								e.addEventListener('pointerup', this.onPointerUp, !1))
 							: window.navigator.msPointerEnabled
-							? (e.addEventListener('MSPointerDown', this.onPointerDown, !1),
-							  e.addEventListener('MSPointerMove', this.onPointerMove, !1),
-							  e.addEventListener('MSPointerUp', this.onPointerUp, !1))
-							: (e.addEventListener('touchstart', this.onTouchStart, !1),
-							  e.addEventListener('touchmove', this.onTouchMove, !1),
-							  e.addEventListener('touchend', this.onTouchEnd, !1));
+								? (e.addEventListener('MSPointerDown', this.onPointerDown, !1),
+									e.addEventListener('MSPointerMove', this.onPointerMove, !1),
+									e.addEventListener('MSPointerUp', this.onPointerUp, !1))
+								: (e.addEventListener('touchstart', this.onTouchStart, !1),
+									e.addEventListener('touchmove', this.onTouchMove, !1),
+									e.addEventListener('touchend', this.onTouchEnd, !1));
 					}
 					unbind() {
 						let e = this.Reveal.getRevealElement();
@@ -5382,25 +5392,25 @@
 									o = n - this.touchStartY;
 								a > 40 && Math.abs(a) > Math.abs(o)
 									? ((this.touchCaptured = !0),
-									  'linear' === t.navigationMode
+										'linear' === t.navigationMode
 											? t.rtl
 												? this.Reveal.next()
 												: this.Reveal.prev()
 											: this.Reveal.left())
 									: a < -40 && Math.abs(a) > Math.abs(o)
-									? ((this.touchCaptured = !0),
-									  'linear' === t.navigationMode
-											? t.rtl
-												? this.Reveal.prev()
-												: this.Reveal.next()
-											: this.Reveal.right())
-									: o > 40 && s.up
-									? ((this.touchCaptured = !0),
-									  'linear' === t.navigationMode ? this.Reveal.prev() : this.Reveal.up())
-									: o < -40 &&
-									  s.down &&
-									  ((this.touchCaptured = !0),
-									  'linear' === t.navigationMode ? this.Reveal.next() : this.Reveal.down()),
+										? ((this.touchCaptured = !0),
+											'linear' === t.navigationMode
+												? t.rtl
+													? this.Reveal.prev()
+													: this.Reveal.next()
+												: this.Reveal.right())
+										: o > 40 && s.up
+											? ((this.touchCaptured = !0),
+												'linear' === t.navigationMode ? this.Reveal.prev() : this.Reveal.up())
+											: o < -40 &&
+												s.down &&
+												((this.touchCaptured = !0),
+												'linear' === t.navigationMode ? this.Reveal.next() : this.Reveal.down()),
 									t.embedded
 										? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault()
 										: e.preventDefault();
@@ -5592,15 +5602,15 @@
 							this.context.translate(i - 14, n - 14),
 							this.playing
 								? ((this.context.fillStyle = '#fff'),
-								  this.context.fillRect(0, 0, 10, s),
-								  this.context.fillRect(18, 0, 10, s))
+									this.context.fillRect(0, 0, 10, s),
+									this.context.fillRect(18, 0, 10, s))
 								: (this.context.beginPath(),
-								  this.context.translate(4, 0),
-								  this.context.moveTo(0, 0),
-								  this.context.lineTo(24, 14),
-								  this.context.lineTo(0, s),
-								  (this.context.fillStyle = '#fff'),
-								  this.context.fill()),
+									this.context.translate(4, 0),
+									this.context.moveTo(0, 0),
+									this.context.lineTo(24, 14),
+									this.context.lineTo(0, s),
+									(this.context.fillStyle = '#fff'),
+									this.context.fill()),
 							this.context.restore();
 					}
 					on(e, t) {
@@ -5753,7 +5763,7 @@
 						!0 === E.embedded
 							? (Y.viewport = o(a, '.reveal-viewport') || a)
 							: ((Y.viewport = document.body),
-							  document.documentElement.classList.add('reveal-full-page')),
+								document.documentElement.classList.add('reveal-full-page')),
 							Y.viewport.classList.add('reveal-viewport');
 					}
 					function ye() {
@@ -5778,7 +5788,7 @@
 									? ge.setupPDF()
 									: window.addEventListener('load', () => {
 											ge.setupPDF();
-									  }));
+										}));
 					}
 					function we() {
 						E.showHiddenSlides ||
@@ -6078,17 +6088,17 @@
 									(U = Math.min(U, E.maxScale)),
 									1 === U
 										? ((Y.slides.style.zoom = ''),
-										  (Y.slides.style.left = ''),
-										  (Y.slides.style.top = ''),
-										  (Y.slides.style.bottom = ''),
-										  (Y.slides.style.right = ''),
-										  De({ layout: '' }))
+											(Y.slides.style.left = ''),
+											(Y.slides.style.top = ''),
+											(Y.slides.style.bottom = ''),
+											(Y.slides.style.right = ''),
+											De({ layout: '' }))
 										: ((Y.slides.style.zoom = ''),
-										  (Y.slides.style.left = '50%'),
-										  (Y.slides.style.top = '50%'),
-										  (Y.slides.style.bottom = 'auto'),
-										  (Y.slides.style.right = 'auto'),
-										  De({ layout: 'translate(-50%, -50%) scale(' + U + ')' }));
+											(Y.slides.style.left = '50%'),
+											(Y.slides.style.top = '50%'),
+											(Y.slides.style.bottom = 'auto'),
+											(Y.slides.style.right = 'auto'),
+											De({ layout: 'translate(-50%, -50%) scale(' + U + ')' }));
 								const i = Array.from(Y.wrapper.querySelectorAll(S));
 								for (let t = 0, n = i.length; t < n; t++) {
 									const n = i[t];
@@ -6192,8 +6202,8 @@
 								? ie.show()
 								: ie.hide()
 							: ie.isVisible()
-							? ie.hide()
-							: ie.show();
+								? ie.hide()
+								: ie.show();
 					}
 					function nt(e) {
 						'boolean' == typeof e ? (e ? Tt() : It()) : Z ? Tt() : It();
@@ -6347,10 +6357,10 @@
 									a
 										? t.classList.add('present')
 										: e < i
-										? (t.classList.add(s ? 'future' : 'past'), E.fragments && ht(t))
-										: e > i
-										? (t.classList.add(s ? 'past' : 'future'), E.fragments && ut(t))
-										: e === i && E.fragments && (o ? ut(t) : r && ht(t));
+											? (t.classList.add(s ? 'future' : 'past'), E.fragments && ht(t))
+											: e > i
+												? (t.classList.add(s ? 'past' : 'future'), E.fragments && ut(t))
+												: e === i && E.fragments && (o ? ut(t) : r && ht(t));
 							}
 							let e = n[i],
 								t = e.classList.contains('present');
@@ -6545,17 +6555,17 @@
 							i
 								? (J = parseInt(i, 10))
 								: s
-								? (J = parseInt(s, 10))
-								: n
-								? (J = parseInt(n, 10))
-								: ((J = E.autoSlide),
-								  0 === m.querySelectorAll('.fragment').length &&
-										t(m, 'video, audio').forEach((e) => {
-											e.hasAttribute('data-autoplay') &&
-												J &&
-												(1e3 * e.duration) / e.playbackRate > J &&
-												(J = (1e3 * e.duration) / e.playbackRate + 1e3);
-										})),
+									? (J = parseInt(s, 10))
+									: n
+										? (J = parseInt(n, 10))
+										: ((J = E.autoSlide),
+											0 === m.querySelectorAll('.fragment').length &&
+												t(m, 'video, audio').forEach((e) => {
+													e.hasAttribute('data-autoplay') &&
+														J &&
+														(1e3 * e.duration) / e.playbackRate > J &&
+														(J = (1e3 * e.duration) / e.playbackRate + 1e3);
+												})),
 								!J ||
 									Z ||
 									tt() ||
@@ -6583,21 +6593,21 @@
 						(x.hasNavigatedHorizontally = !0),
 							E.rtl
 								? (oe.isActive() || e || !1 === ae.next()) &&
-								  vt().left &&
-								  at(u + 1, 'grid' === E.navigationMode ? v : void 0)
+									vt().left &&
+									at(u + 1, 'grid' === E.navigationMode ? v : void 0)
 								: (oe.isActive() || e || !1 === ae.prev()) &&
-								  vt().left &&
-								  at(u - 1, 'grid' === E.navigationMode ? v : void 0);
+									vt().left &&
+									at(u - 1, 'grid' === E.navigationMode ? v : void 0);
 					}
 					function Ft({ skipFragments: e = !1 } = {}) {
 						(x.hasNavigatedHorizontally = !0),
 							E.rtl
 								? (oe.isActive() || e || !1 === ae.prev()) &&
-								  vt().right &&
-								  at(u - 1, 'grid' === E.navigationMode ? v : void 0)
+									vt().right &&
+									at(u - 1, 'grid' === E.navigationMode ? v : void 0)
 								: (oe.isActive() || e || !1 === ae.next()) &&
-								  vt().right &&
-								  at(u + 1, 'grid' === E.navigationMode ? v : void 0);
+									vt().right &&
+									at(u + 1, 'grid' === E.navigationMode ? v : void 0);
 					}
 					function zt({ skipFragments: e = !1 } = {}) {
 						(oe.isActive() || e || !1 === ae.prev()) && vt().up && at(u, v - 1);
@@ -6633,8 +6643,8 @@
 								t.down
 									? Ht({ skipFragments: e })
 									: E.rtl
-									? Dt({ skipFragments: e })
-									: Ft({ skipFragments: e });
+										? Dt({ skipFragments: e })
+										: Ft({ skipFragments: e });
 						}
 					}
 					function qt(e) {
@@ -6851,8 +6861,8 @@
 				'object' == typeof exports && 'undefined' != typeof module
 					? (module.exports = e())
 					: 'function' == typeof define && define.amd
-					? define(e)
-					: ((t = 'undefined' != typeof globalThis ? globalThis : t || self).RevealNotes = e());
+						? define(e)
+						: ((t = 'undefined' != typeof globalThis ? globalThis : t || self).RevealNotes = e());
 			})(this, function () {
 				'use strict';
 				function t() {
@@ -6917,10 +6927,10 @@
 						'colon' === (e = e.toLowerCase())
 							? ':'
 							: '#' === e.charAt(0)
-							? 'x' === e.charAt(1)
-								? String.fromCharCode(parseInt(e.substring(2), 16))
-								: String.fromCharCode(+e.substring(1))
-							: ''
+								? 'x' === e.charAt(1)
+									? String.fromCharCode(parseInt(e.substring(2), 16))
+									: String.fromCharCode(+e.substring(1))
+								: ''
 					);
 				}
 				const u = /(^|[^\[])\^/g;
@@ -6962,10 +6972,10 @@
 									? e
 									: t.replace(w, '$1') + e
 								: '/' === e.charAt(0)
-								? n
-									? e
-									: t.replace(x, '$1') + e
-								: t + e;
+									? n
+										? e
+										: t.replace(x, '$1') + e
+									: t + e;
 						})(e, n));
 					try {
 						n = encodeURI(n).replace(/%25/g, '%');
@@ -7159,9 +7169,9 @@
 									this.options.pedantic
 										? ((r = 2), (d = c.trimLeft()))
 										: ((r = e[2].search(/[^ ]/)),
-										  (r = r > 4 ? 1 : r),
-										  (d = c.slice(r)),
-										  (r += e[1].length)),
+											(r = r > 4 ? 1 : r),
+											(d = c.slice(r)),
+											(r += e[1].length)),
 									(l = !1),
 									!c &&
 										/^ *$/.test(p) &&
@@ -7273,10 +7283,10 @@
 									/^ *-+: *$/.test(t.align[n])
 										? (t.align[n] = 'right')
 										: /^ *:-+: *$/.test(t.align[n])
-										? (t.align[n] = 'center')
-										: /^ *:-+ *$/.test(t.align[n])
-										? (t.align[n] = 'left')
-										: (t.align[n] = null);
+											? (t.align[n] = 'center')
+											: /^ *:-+ *$/.test(t.align[n])
+												? (t.align[n] = 'left')
+												: (t.align[n] = null);
 								for (a = t.rows.length, n = 0; n < a; n++)
 									t.rows[n] = v(t.rows[n], t.header.length).map((t) => ({ text: t }));
 								for (a = t.header.length, i = 0; i < a; i++)
@@ -7332,13 +7342,13 @@
 								!this.lexer.state.inLink && /^<a /i.test(e[0])
 									? (this.lexer.state.inLink = !0)
 									: this.lexer.state.inLink &&
-									  /^<\/a>/i.test(e[0]) &&
-									  (this.lexer.state.inLink = !1),
+										/^<\/a>/i.test(e[0]) &&
+										(this.lexer.state.inLink = !1),
 								!this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(e[0])
 									? (this.lexer.state.inRawBlock = !0)
 									: this.lexer.state.inRawBlock &&
-									  /^<\/(pre|code|kbd|script)(\s|>)/i.test(e[0]) &&
-									  (this.lexer.state.inRawBlock = !1),
+										/^<\/(pre|code|kbd|script)(\s|>)/i.test(e[0]) &&
+										(this.lexer.state.inRawBlock = !1),
 								{
 									type: this.options.sanitize ? 'text' : 'html',
 									raw: e[0],
@@ -7777,8 +7787,8 @@
 						this.options.pedantic
 							? ((n.block = E.pedantic), (n.inline = $.pedantic))
 							: this.options.gfm &&
-							  ((n.block = E.gfm),
-							  this.options.breaks ? (n.inline = $.breaks) : (n.inline = $.gfm)),
+								((n.block = E.gfm),
+								this.options.breaks ? (n.inline = $.breaks) : (n.inline = $.gfm)),
 							(this.tokenizer.rules = n);
 					}
 					static get rules() {
@@ -7824,8 +7834,8 @@
 										!i || ('paragraph' !== i.type && 'text' !== i.type)
 											? e.push(n)
 											: ((i.raw += '\n' + n.raw),
-											  (i.text += '\n' + n.text),
-											  (this.inlineQueue[this.inlineQueue.length - 1].src = i.text));
+												(i.text += '\n' + n.text),
+												(this.inlineQueue[this.inlineQueue.length - 1].src = i.text));
 								else if ((n = this.tokenizer.fences(t))) (t = t.substring(n.raw.length)), e.push(n);
 								else if ((n = this.tokenizer.heading(t)))
 									(t = t.substring(n.raw.length)), e.push(n);
@@ -7839,10 +7849,10 @@
 										(i = e[e.length - 1]),
 										!i || ('paragraph' !== i.type && 'text' !== i.type)
 											? this.tokens.links[n.tag] ||
-											  (this.tokens.links[n.tag] = { href: n.href, title: n.title })
+												(this.tokens.links[n.tag] = { href: n.href, title: n.title })
 											: ((i.raw += '\n' + n.raw),
-											  (i.text += '\n' + n.raw),
-											  (this.inlineQueue[this.inlineQueue.length - 1].src = i.text));
+												(i.text += '\n' + n.raw),
+												(this.inlineQueue[this.inlineQueue.length - 1].src = i.text));
 								else if ((n = this.tokenizer.table(t))) (t = t.substring(n.raw.length)), e.push(n);
 								else if ((n = this.tokenizer.lheading(t)))
 									(t = t.substring(n.raw.length)), e.push(n);
@@ -7861,9 +7871,9 @@
 										(i = e[e.length - 1]),
 											r && 'paragraph' === i.type
 												? ((i.raw += '\n' + n.raw),
-												  (i.text += '\n' + n.text),
-												  this.inlineQueue.pop(),
-												  (this.inlineQueue[this.inlineQueue.length - 1].src = i.text))
+													(i.text += '\n' + n.text),
+													this.inlineQueue.pop(),
+													(this.inlineQueue[this.inlineQueue.length - 1].src = i.text))
 												: e.push(n),
 											(r = s.length !== t.length),
 											(t = t.substring(n.raw.length));
@@ -7872,9 +7882,9 @@
 											(i = e[e.length - 1]),
 											i && 'text' === i.type
 												? ((i.raw += '\n' + n.raw),
-												  (i.text += '\n' + n.text),
-												  this.inlineQueue.pop(),
-												  (this.inlineQueue[this.inlineQueue.length - 1].src = i.text))
+													(i.text += '\n' + n.text),
+													this.inlineQueue.pop(),
+													(this.inlineQueue[this.inlineQueue.length - 1].src = i.text))
 												: e.push(n);
 									else if (t) {
 										const e = 'Infinite loop on byte: ' + t.charCodeAt(0);
@@ -8001,11 +8011,11 @@
 							(t = t.replace(/\n$/, '') + '\n'),
 							i
 								? '<pre><code class="' +
-								  this.options.langPrefix +
-								  o(i, !0) +
-								  '">' +
-								  (n ? t : o(t, !0)) +
-								  '</code></pre>\n'
+									this.options.langPrefix +
+									o(i, !0) +
+									'">' +
+									(n ? t : o(t, !0)) +
+									'</code></pre>\n'
 								: '<pre><code>' + (n ? t : o(t, !0)) + '</code></pre>\n'
 						);
 					}
@@ -8273,7 +8283,7 @@
 													m
 														? k.tokens.length > 0 && 'paragraph' === k.tokens[0].type
 															? ((k.tokens[0].text = b + ' ' + k.tokens[0].text),
-															  k.tokens[0].tokens &&
+																k.tokens[0].tokens &&
 																	k.tokens[0].tokens.length > 0 &&
 																	'text' === k.tokens[0].tokens[0].type &&
 																	(k.tokens[0].tokens[0].text =
@@ -8459,7 +8469,7 @@
 												? function (...n) {
 														let i = t.renderer.apply(this, n);
 														return !1 === i && (i = e.apply(this, n)), i;
-												  }
+													}
 												: t.renderer;
 										}
 										if (t.tokenizer) {
@@ -8472,7 +8482,7 @@
 															? n.startBlock.push(t.start)
 															: (n.startBlock = [t.start])
 														: 'inline' === t.level &&
-														  (n.startInline
+															(n.startInline
 																? n.startInline.push(t.start)
 																: (n.startInline = [t.start])));
 										}
@@ -8526,7 +8536,7 @@
 									N.defaults.extensions.childTokens[n.type]
 										? N.defaults.extensions.childTokens[n.type].forEach(function (t) {
 												N.walkTokens(n[t], e);
-										  })
+											})
 										: n.tokens && N.walkTokens(n.tokens, e);
 							}
 					}),
@@ -8585,10 +8595,10 @@
 										'string' == typeof i
 											? i
 											: window.location.protocol +
-											  '//' +
-											  window.location.host +
-											  window.location.pathname +
-											  window.location.search;
+												'//' +
+												window.location.host +
+												window.location.pathname +
+												window.location.search;
 								(t = setInterval(function () {
 									n.postMessage(
 										JSON.stringify({
@@ -8624,12 +8634,12 @@
 							let t = r.querySelector('aside.notes');
 							t
 								? ((a.notes = t.innerHTML),
-								  (a.markdown = 'string' == typeof t.getAttribute('data-markdown')),
-								  (s = null))
+									(a.markdown = 'string' == typeof t.getAttribute('data-markdown')),
+									(s = null))
 								: r.hasAttribute('data-notes') &&
-								  ((a.notes = r.getAttribute('data-notes')),
-								  (a.whitespace = 'pre-wrap'),
-								  (s = null));
+									((a.notes = r.getAttribute('data-notes')),
+									(a.whitespace = 'pre-wrap'),
+									(s = null));
 						}
 						s &&
 							((a.notes = Array.from(s)
@@ -8652,9 +8662,9 @@
 							s && 'reveal-notes' === s.namespace && 'connected' === s.type
 								? (clearInterval(t), a())
 								: s &&
-								  'reveal-notes' === s.namespace &&
-								  'call' === s.type &&
-								  (function (t, i, s) {
+									'reveal-notes' === s.namespace &&
+									'call' === s.type &&
+									(function (t, i, s) {
 										let r = e[t].apply(e, i);
 										n.postMessage(
 											JSON.stringify({
@@ -8665,7 +8675,7 @@
 											}),
 											'*'
 										);
-								  })(s.methodName, s.arguments, s.callId);
+									})(s.methodName, s.arguments, s.callId);
 						}
 					}
 					function a() {
@@ -8700,7 +8710,7 @@
 															: ((n = e), window.addEventListener('message', r), a()));
 												}
 												var e;
-										  }),
+											}),
 									e.addKeyBinding(
 										{ keyCode: 83, key: 'S', description: 'Speaker notes view' },
 										function () {
@@ -8718,8 +8728,8 @@
 				'object' == typeof exports && 'undefined' != typeof module
 					? (module.exports = t())
 					: 'function' == typeof define && define.amd
-					? define(t)
-					: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).RevealSearch = t());
+						? define(t)
+						: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).RevealSearch = t());
 			})(this, function () {
 				'use strict';
 				/*!
@@ -8856,8 +8866,8 @@
 				'object' == typeof exports && 'undefined' != typeof module
 					? (module.exports = t())
 					: 'function' == typeof define && define.amd
-					? define(t)
-					: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).RevealZoom = t());
+						? define(t)
+						: ((e = 'undefined' != typeof globalThis ? globalThis : e || self).RevealZoom = t());
 			})(this, function () {
 				'use strict';
 				/*!
@@ -8903,17 +8913,17 @@
 						else
 							1 === o
 								? ((document.body.style.position = ''),
-								  (document.body.style.left = ''),
-								  (document.body.style.top = ''),
-								  (document.body.style.width = ''),
-								  (document.body.style.height = ''),
-								  (document.body.style.zoom = ''))
+									(document.body.style.left = ''),
+									(document.body.style.top = ''),
+									(document.body.style.width = ''),
+									(document.body.style.height = ''),
+									(document.body.style.zoom = ''))
 								: ((document.body.style.position = 'relative'),
-								  (document.body.style.left = -(n.x + t.x) / o + 'px'),
-								  (document.body.style.top = -(n.y + t.y) / o + 'px'),
-								  (document.body.style.width = 100 * o + '%'),
-								  (document.body.style.height = 100 * o + '%'),
-								  (document.body.style.zoom = o));
+									(document.body.style.left = -(n.x + t.x) / o + 'px'),
+									(document.body.style.top = -(n.y + t.y) / o + 'px'),
+									(document.body.style.width = 100 * o + '%'),
+									(document.body.style.height = 100 * o + '%'),
+									(document.body.style.zoom = o));
 						(e = o),
 							document.documentElement.classList &&
 								(1 !== e
@@ -8927,11 +8937,11 @@
 						n < i
 							? window.scroll(d.x, d.y - (14 / e) * (1 - n / i))
 							: n > window.innerHeight - i &&
-							  window.scroll(d.x, d.y + (1 - (window.innerHeight - n) / i) * (14 / e)),
+								window.scroll(d.x, d.y + (1 - (window.innerHeight - n) / i) * (14 / e)),
 							o < t
 								? window.scroll(d.x - (14 / e) * (1 - o / t), d.y)
 								: o > window.innerWidth - t &&
-								  window.scroll(d.x + (1 - (window.innerWidth - o) / t) * (14 / e), d.y);
+									window.scroll(d.x + (1 - (window.innerWidth - o) / t) * (14 / e), d.y);
 					}
 					function r() {
 						return {

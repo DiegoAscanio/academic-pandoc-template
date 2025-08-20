@@ -100,6 +100,8 @@ Each project type has a `_quarto.yml` configuration file:
 
 These files define output formats, filters, and other project settings. Content and metadata are still configured in the Markdown files as before.
 
+**For detailed migration instructions, see [QUARTO_MIGRATION.md](QUARTO_MIGRATION.md).**
+
 ### Pandoc Configuration (Legacy)
 
 For backward compatibility, the original Pandoc configuration files are preserved:
@@ -157,6 +159,7 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 - [Pandoc](https://pandoc.org/) a universal document converter and
 - [Pandoc GitHub action](https://github.com/pandoc/pandoc-action-example)
 - [Prettier](https://prettier.io/) an opinionated code formatter
+- [Quarto](https://quarto.org/) an open-source scientific and technical publishing system
 - [Tectonic](https://tectonic-typesetting.github.io/en-US/) a modernized, complete, self-contained [TeX](https://www.tug.org/)/[LaTeX](https://www.latex-project.org/) engine, powered by [XeTeX](http://xetex.sourceforge.net/) and [TeXLive](https://www.tug.org/texlive/)
 - [Tectonic GitHub action](https://github.com/WtfJoke/setup-tectonic)
 
@@ -165,6 +168,7 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 - [x] Refactoring of the article template
 - [x] Templates for presentation and thesis
 - [x] Change name of master branch to main
+- [x] **Migration to Quarto projects**
 - [ ] Improve documentation
 - [ ] Improve caching in `.github/workflows/pandoc.yml`
 

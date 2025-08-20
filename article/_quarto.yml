@@ -1,0 +1,25 @@
+project:
+  type: default
+
+format:
+  docx:
+    output-file: article.docx
+    reference-doc: null
+  pdf:
+    output-file: article.pdf
+    pdf-engine: tectonic
+  latex:
+    output-file: article.tex
+
+# Shared configuration from defaults.yaml
+cite-method: citeproc
+citeproc: true
+embed-resources: true
+file-scope: false
+from: markdown
+highlight-style: pygments
+reference-location: block
+resource-path: []
+standalone: true
+top-level-division: default
+verbosity: INFO

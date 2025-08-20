@@ -1,0 +1,60 @@
+project:
+  type: book
+  
+book:
+  title: "Thesis Title"
+  chapters:
+    - 00.md
+    - 00_Introduction.md
+    - 10_Chapter_1.md
+    - 20_Chapter_2.md
+    - 30_Chapter_3.md
+    - 40_Chapter_4.md
+    - 50_Conclusion.md
+    - 60_Acknowledgment.md
+    - 71_Figures.md
+    - 74_Bibliography.md
+
+format:
+  docx:
+    output-file: thesis.docx
+    toc-depth: 2
+    filters:
+      - pandoc-crossref
+      - filters/multiple-bibliographies.lua
+      - filters/pandoc-quotes.lua
+  epub:
+    output-file: thesis.epub
+    toc-depth: 2
+    filters:
+      - pandoc-crossref
+      - filters/multiple-bibliographies.lua
+      - filters/pandoc-quotes.lua
+  pdf:
+    output-file: thesis.pdf
+    pdf-engine: tectonic
+    toc-depth: 2
+    filters:
+      - pandoc-crossref
+      - filters/multiple-bibliographies.lua
+      - filters/pandoc-quotes.lua
+  latex:
+    output-file: thesis.tex
+    toc-depth: 2
+    filters:
+      - pandoc-crossref
+      - filters/multiple-bibliographies.lua
+      - filters/pandoc-quotes.lua
+
+# Shared configuration from defaults.yaml
+cite-method: citeproc
+citeproc: true
+embed-resources: true
+file-scope: false
+from: markdown
+highlight-style: pygments
+reference-location: block
+resource-path: []
+standalone: true
+top-level-division: default
+verbosity: INFO

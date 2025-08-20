@@ -1,0 +1,27 @@
+project:
+  type: default
+
+format:
+  revealjs:
+    output-file: presentation.html
+    slide-level: 2
+  pdf:
+    output-file: presentation.pdf
+    pdf-engine: tectonic
+  pptx:
+    output-file: presentation.pptx
+  latex:
+    output-file: presentation.tex
+
+# Shared configuration from defaults.yaml
+cite-method: citeproc
+citeproc: true
+embed-resources: true
+file-scope: false
+from: markdown
+highlight-style: pygments
+reference-location: block
+resource-path: []
+standalone: true
+top-level-division: default
+verbosity: INFO

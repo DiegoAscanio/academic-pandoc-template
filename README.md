@@ -36,13 +36,32 @@ Follow the [The Markdown Guide](https://www.markdownguide.org/) and make sure yo
 
 ### Use it locally
 
-Install all prerequisites
+#### With Quarto (recommended)
+
+Install all prerequisites:
+
+- [Quarto](https://quarto.org/docs/get-started/installation.html)
+- [Tectonic](https://tectonic-typesetting.github.io/) or another [LaTeX](https://www.latex-project.org/get/) distribution
+
+Open your command line and execute one of the following commands:
+
+- `quarto render` to build all projects
+- `quarto render article/` to build the article in all formats
+- `quarto render article/ --to docx` to build the article in DOCX format
+- `quarto render presentation/` to build the presentation in all formats
+- `quarto render presentation/ --to revealjs` to build the presentation as HTML slides
+- `quarto render thesis/` to build the thesis in all formats
+- `quarto render thesis/ --to pdf` to build the thesis as PDF
+
+#### With Make (legacy)
+
+Install all prerequisites:
 
 - [Make](https://www.gnu.org/software/make/)
 - [Pandoc](http://pandoc.org/installing.html)
 - [Tectonic](https://tectonic-typesetting.github.io/) or another [LaTeX](https://www.latex-project.org/get/) distribution
 
-Open your command line and execute on of the following commands.
+Open your command line and execute one of the following commands:
 
 - `make all` to build all documents
 - `make article` to build the article
@@ -68,9 +87,38 @@ npm run check
 npm run format
 ```
 
-## Configuration
+## Quarto vs Pandoc Configuration
 
-Change the [variables](https://pandoc.org/MANUAL.html#variables) in the frontmatter in [article/article.md](article/article.md), [presentation/presentation.md](presentation/presentation.md) or [thesis/00.md](thesis/00.md) to configure your document.
+This template now supports both **Quarto** (recommended) and **Pandoc** (legacy) workflows:
+
+### Quarto Configuration
+
+Each project type has a `_quarto.yml` configuration file:
+- [article/_quarto.yml](article/_quarto.yml) for the article project
+- [presentation/_quarto.yml](presentation/_quarto.yml) for the presentation project  
+- [thesis/_quarto.yml](thesis/_quarto.yml) for the thesis project
+
+These files define output formats, filters, and other project settings. Content and metadata are still configured in the Markdown files as before.
+
+### Pandoc Configuration (Legacy)
+
+For backward compatibility, the original Pandoc configuration files are preserved:
+- [defaults.yaml](defaults.yaml) for shared default configuration
+- [article/docx.yaml](article/docx.yaml) for the article docx configuration
+- [article/pdf.yaml](article/pdf.yaml) for the article pdf configuration
+- [article/tex.yaml](article/tex.yaml) for the article tex configuration
+- [presentation/html.yaml](presentation/html.yaml) for the presentation html configuration
+- [presentation/pptx.yaml](presentation/pptx.yaml) for the presentation pptx configuration
+- [presentation/pdf.yaml](presentation/pdf.yaml) for the presentation pdf configuration
+- [presentation/tex.yaml](presentation/tex.yaml) for the presentation tex configuration
+- [thesis/docx.yaml](thesis/docx.yaml) for the thesis docx configuration
+- [thesis/epub.yaml](thesis/epub.yaml) for the thesis epub configuration
+- [thesis/pdf.yaml](thesis/pdf.yaml) for the thesis pdf configuration
+- [thesis/tex.yaml](thesis/tex.yaml) for the thesis tex configuration
+
+## Document Content Configuration
+
+Change the [variables](https://pandoc.org/MANUAL.html#variables) in the frontmatter in [article/article.md](article/article.md), [presentation/presentation.md](presentation/presentation.md) or [thesis/00.md](thesis/00.md) to configure your document content and metadata.
 
 ```yaml
 author:
@@ -82,21 +130,6 @@ date: 1 January 2023
 keywords: # list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for author, above
 lang: en-US
 ```
-
-Change the [default files](https://pandoc.org/MANUAL.html#defaults-files) to your needs:
-
-- [default.yaml](default.yaml) for the default configuration
-- [article/docx.yaml](article/docx.yaml) for the article docx configuration
-- [article/pdf.yaml](article/pdf.yaml) for the article pdf configuration
-- [article/tex.yaml](article/tex.yaml) for the article tex configuration
-- [presentation/html.yaml](presentation/html.yaml) for the presentation html configuration
-- [presentation/ppxt.yaml](presentation/ppxt.yaml) for the presentation pptx configuration
-- [presentation/pdf.yaml](presentation/pdf.yaml) for the presentation pdf configuration
-- [presentation/tex.yaml](presentation/tex.yaml) for the presentation tex configuration
-- [thesis/docx.yaml](thesis/docx.yaml) for the thesis docx configuration
-- [thesis/epub.yaml](thesis/epub.yaml) for the thesis epub configuration
-- [thesis/pdf.yaml](thesis/pdf.yaml) for the thesis pdf configuration
-- [thesis/tex.yaml](thesis/tex.yaml) for the thesis tex configuration
 
 ## Conventional Commits
 

@@ -1,0 +1,21 @@
+project:
+  type: default
+  output-dir: _output
+
+# This is a multi-project setup
+# Each subdirectory (article, presentation, thesis) has its own _quarto.yml
+# To render all projects, use: quarto render
+# To render specific project, use: quarto render article/ or cd article && quarto render
+
+# Shared defaults - these mirror defaults.yaml
+cite-method: citeproc
+citeproc: true
+embed-resources: true
+file-scope: false
+from: markdown
+highlight-style: pygments
+reference-location: block
+resource-path: []
+standalone: true
+top-level-division: default
+verbosity: INFO

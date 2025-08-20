@@ -1,0 +1,49 @@
+name: Quarto
+
+on: 
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  render_via_quarto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          # To install LaTeX to build PDF book 
+          tinytex: true
+          
+      - name: Install pandoc-crossref
+        run: |
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.17.0/pandoc-crossref-Linux.tar.xz
+          tar -xvf pandoc-crossref-Linux.tar.xz
+          sudo mv pandoc-crossref /usr/bin
+          
+      - uses: actions/cache@v3
+        name: Tectonic Cache
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+            
+      - uses: wtfjoke/setup-tectonic@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Render with Quarto
+        run: |
+          export APPIMAGE_EXTRACT_AND_RUN=1
+          quarto render article/
+          quarto render presentation/
+          quarto render thesis/
+          
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Quarto render artifacts added'
